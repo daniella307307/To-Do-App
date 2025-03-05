@@ -4,6 +4,7 @@ const router = express.Router();
 const {verifyToken} = require('../middleware/verification');
 router.post('/register', userController.register);
 router.post('/login', userController.login);
+router.put('/update', verifyToken, userController.updateProfile);
 router.get('/profile', verifyToken, (req,res)=>{
     res.json({message:"You have access to this route",user:req.user});
 });
