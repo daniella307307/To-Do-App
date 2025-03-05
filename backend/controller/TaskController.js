@@ -16,10 +16,10 @@ const createTask = async (req, res) => {
 };
 const getTasks = async (req, res) => {
     try {
-        const tasks = await Task.find({user:req.user.id});
-        res.status(200).json({tasks});
+        const tasks = await Task.find({ user: req.user.id });
+        res.status(200).json({ tasks });
     } catch (error) {
-        res.status(500).json({message:error.message});
+        res.status(500).json({ message: error.message });
     }
 };
 const updateTask = async (req, res) => {
